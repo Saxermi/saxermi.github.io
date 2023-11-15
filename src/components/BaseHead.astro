@@ -6,7 +6,7 @@ export interface Props {
   image?: string;
 }
 
-const { title, description, image = '/social_img.png' } = Astro.props; // Removed the base URL from the default image
+const { title, description, image = '/saxermi.github.io/social_img.png' } = Astro.props; // Removed the base URL from the default image
 ---
 
 <head>
@@ -22,7 +22,8 @@ const { title, description, image = '/social_img.png' } = Astro.props; // Remove
   <meta name="description" content={description} />
 
   <!-- CSS Global Stylesheet -->
-  <link rel="stylesheet" href="/styles/global.css" />
+<link rel="stylesheet" href="/saxermi.github.io/global.css" />
+
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />

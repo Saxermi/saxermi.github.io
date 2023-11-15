@@ -1,0 +1,11 @@
+/* Importieren Sie KaTeX CSS */
+@import url('https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css');
+
+
+/* Ihre bestehenden Styles */
+.time-line-container>div:last-child .education__time>.education__line {
+    display: none;
+}
+
+/* Weitere globale Styles können hier folgen... */
+
