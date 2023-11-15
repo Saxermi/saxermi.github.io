@@ -8,7 +8,7 @@ import rehypeKatex from 'rehype-katex';
 // https://astro.build/config
 export default defineConfig({
 site: 'https://saxermi.github.io/',
-
+ base: '/saxermi.github.io',
   markdown: {
     	shikiConfig: {
 			theme: "dracula",
