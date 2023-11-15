@@ -9,7 +9,7 @@ export interface Props {
 	image?: string;
 }
 
-const { title, description, image = '/ saxermi.github.io /social_img.png' } = Astro.props;
+const { title, description, image = '/saxermi.github.io/social_img.png' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -36,3 +36,5 @@ const { title, description, image = '/ saxermi.github.io /social_img.png' } = As
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+<!-- CSS Global Stylesheet -->
+<link rel="stylesheet" href="/styles/global.css" />
