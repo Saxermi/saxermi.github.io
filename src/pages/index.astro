@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const last_posts = posts.slice(0, 3);
+
+const projects = (await getCollection("project")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const last_projects = projects.slice(0, 3);
+
+
+
+---
+
+<BaseLayout title="Home | Michael Saxer" sideBarActiveItemID="home">
+  <div class="pb-12 mt-5">
+    <div class="text-xl py-1">Hey there 👋</div>
+    <div class="text-5xl font-bold">I'm Michael Saxer</div>
+    <div class="text-3xl py-3 font-bold">Aspiring Data Scientist, science enthusiast and Homo Politicus </div>
+    <div class="py-2">
+      <text class="text-lg">
+    Welcome to my own little Internet page. This site is bilingual. While most project descriptions are in English, many blog posts and the Politics part are in German. Please note that this site is currently under construction. Therefore, most of the site is just a placeholder until I have time to update everything.
+      </text>
+    </div>
+    <div class="mt-8">
+      <a class="btn" href="https://twitter.com/super_sach" target="_blank"> Let's connect!</a>
+      <a href="https://github.com/saxermi" target="_blank" class="btn btn-outline ml-5">
+        Also check my Github
+      </a>
+    </div>
+  </div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+  </div>
+<!--
+  <HorizontalCard
+    title="Test Projekt"
+    img="/post_img.webp"
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="#"
+    badge="NEW"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Demo Project 2"
+    img="/post_img.webp"
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="#"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Demo Project 3"
+    img="/post_img.webp"
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="#"
+    badge="FOSS"
+  />
+-->
+
+{
+  last_projects.map((project) => (
+    <>
+      <HorizontalCard
+        title={project.data.title}
+        img={project.data.img}
+        desc={project.data.desc}
+        url={"/project/"+project.slug}
+                  target="_self"
+        badge={project.data.badge}
+      />
+      <div class="divider my-0"></div>
+    </>
+  ))
+}
+
+
+
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+  </div>
+
+  {
+    last_posts.map((post) => (
+      <>
+        <HorizontalCard
+          title={post.data.title}
+          img={post.data.heroImage}
+          desc={post.data.description}
+          url={"/blog/" + post.slug}
+          target="_self"
+          badge={post.data.badge}
+        />
+        <div class="divider my-0" />
+      </>
+    ))
+  }
+</BaseLayout>

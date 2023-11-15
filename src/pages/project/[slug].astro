@@ -1,0 +1,32 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+// Angenommen, die Struktur Ihrer Projektdaten ähnelt der von Blog-Posts
+import { ProjectSchema } from "../../content/config"; // Ersetzen Sie dies entsprechend Ihrer Projektkonfiguration
+import ProjectLayout from "../../layouts/ProjectLayout.astro"; // Angenommen, es gibt ein spezifisches Layout für Projekte
+
+export async function getStaticPaths() {
+  const projectEntries = await getCollection("project"); // Laden der Projekt-Sammlung
+  return projectEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"projects">; // Typ angepasst für Projekte
+}
+
+const { entry } = Astro.props;
+const project: ProjectSchema = entry.data; // Angenommen, ProjectSchema ist Ihr Datentyp für Projekte
+const { Content } = await entry.render();
+---
+
+<ProjectLayout
+  title={project.title}
+  // Stellen Sie sicher, dass alle weiteren Props Ihren Projektdaten entsprechen
+  description={project.description}
+  // Entfernen oder ersetzen Sie Props, die nicht zu Projekten passen, wie z.B. pubDate, heroImage, usw.
+>
+  <Content />
+</ProjectLayout>
+
