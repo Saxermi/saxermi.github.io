@@ -2,7 +2,7 @@
 title: "Highly Controversial Blog Post"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 pubDate: "Sep 10 2022"
-heroImage: "/post_img.webp"
+heroImage: "/saxermi.github.io/post_img.webp"
 tags: ["tokio"]
 ---
 
