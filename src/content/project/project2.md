@@ -1,16 +1,42 @@
 ---
-title: "Demo Post 2"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 11 2022"
+title: "Evaluating Transformer Layers in Speech Encoders for Speaker Identification"
+description: "Exploring the effectiveness of Wav2Vec 2.0, XLS-R, and Whisper models in speaker identification tasks, with a focus on layer-wise performance."
+pubDate: "Oct 15 2024"
 heroImage: "/post_img.webp"
+tags: ["speech processing", "transformer", "speaker identification"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+In collaboration with Linus Stuhlmann, I conducted a study evaluating the effectiveness of different transformer layers in three advanced speech encoder models—Wav2Vec 2.0, XLS-R, and Whisper—when applied to speaker identification tasks. Our goal was to understand how layer-wise representations contribute to capturing speaker-specific features and determine optimal configurations for these models.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+### Project Overview
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+Speaker identification is essential in various Natural Language Processing (NLP) and audio processing applications. For this project, we focused on three prominent models, analyzing their layer-wise performance to pinpoint which transformer layers most effectively encode speaker-specific information. We used advanced evaluation techniques, such as Singular Vector Canonical Correlation Analysis (SVCCA), k-means clustering, and t-SNE visualizations, to assess layer contributions in each model.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+### Why Evaluate Transformer Layers?
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+Each model's transformer layers extract features differently, influencing their ability to capture speaker characteristics. By fine-tuning and analyzing each model layer-by-layer, we aim to identify patterns and optimal configurations that maximize performance for speaker identification tasks. Our findings can help streamline the development of efficient and accurate speaker recognition systems.
+
+### Key Components and Methodology
+
+1. **Encoder Models:** We evaluated three models: Wav2Vec 2.0, XLS-R, and Whisper. Each model processes audio inputs differently, influencing how they capture speaker-specific information.
+
+2. **Evaluation Techniques:** 
+   - **SVCCA:** We used this technique to measure linear correlations between hidden states and speaker labels, helping us pinpoint layers that best capture speaker features.
+   - **Clustering and Dimensionality Reduction:** We applied k-means clustering and t-SNE to visualize and assess the distinctiveness of speaker embeddings at different layers.
+   - **Hyperparameter Optimization:** Using Optuna, we determined the optimal number of layers for each model to enhance accuracy and reduce computational resources.
+
+3. **Experimental Data:** Our data comprised audio samples from the Mozilla Common Voice dataset, covering various languages and balanced in terms of gender. This diverse dataset allowed us to evaluate model performance across multiple linguistic and demographic groups.
+
+### Results and Insights
+
+Our analysis revealed that:
+- Wav2Vec 2.0 and XLS-R capture speaker-specific features effectively in early layers, while Whisper's effectiveness increases in deeper layers.
+- The optimal layer configurations are 7 layers for Wav2Vec 2.0, 3 layers for XLS-R, and 16 layers for Whisper.
+- Fine-tuning improves stability and clustering performance, with distinct improvements in layer-wise performance metrics.
+
+### Challenges and Future Directions
+
+The study highlights the importance of choosing the right layers for specific tasks, especially in computationally intensive applications like speaker identification. However, we encountered limitations, such as the inability to fully explore non-linear relationships with our chosen analysis methods. Future work will involve testing on larger datasets and exploring the effects of non-linear transformations.
+
+In conclusion, this project sheds light on the importance of layer-wise analysis in transformer-based speech models. Working with Linus enabled us to explore various methodological approaches, and we look forward to expanding this research to cover more diverse datasets and additional model architectures in the future.
+This project description was generated with the assistance of an AI language model.
