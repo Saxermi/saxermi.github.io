@@ -1,57 +1,34 @@
 ---
-title: "Test Projekt"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 10 2022"
+title: "Developing a Biomedical Retrieval-Augmented Generation System"
+description: "Exploring the development of a scalable, reproducible Retrieval-Augmented Generation (RAG) system for biomedical question-answering, in collaboration with Linus Stuhlmann."
+pubDate:  "Oct 15 2024"
 heroImage: "/post_img.webp"
-tags: ["tokio"]
+tags:  ["biomedical", "RAG", "big data", "machine learning"]
 ---
 
-Hallo das ist mein testprojekt
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer
-malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas
-pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse
-platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada
-fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea
-dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst
-quisque sagittis purus sit amet.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum
-quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet.
-Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus.
-Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit
-ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt
-dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus
-arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed
-tempus urna et pharetra pharetra massa massa ultricies mi.
+In collaboration with Linus Stuhlmann, I recently completed a project to create a Retrieval-Augmented Generation (RAG) system for biomedical question-answering. Our project aimed to tackle the challenges of reproducibility and scalability in this field, addressing how to leverage large datasets, like PubMed, to improve accuracy and efficiency in biomedical information retrieval.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam
-sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec.
-Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna
-fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et
-egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel
-turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra
-nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim
-praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus
-egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam
-ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor
-purus non. Amet dictum sit amet justo donec enim.
+### Project Overview
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut
-consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra.
-Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor
-dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor
-dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque
-eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices
-tincidunt arcu. Id cursus metus aliquam eleifend mi.
+Our RAG system is specifically designed for the biomedical domain, integrating advanced retrieval techniques with language models. We used a subset of the PubMed corpus, incorporating tools like Elasticsearch and FAISS to manage and retrieve vast amounts of data efficiently. The system leverages multiple retrieval methods, including BM25 and MedCPT, to optimize performance in terms of recall and precision. 
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus
-imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu
-cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt
-dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat
-sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida.
-Egestas integer eget aliquet nibh praesent tristique magna.
+### Why a RAG System for Biomedical QA?
+
+Biomedical data is constantly evolving, and question-answering systems in this domain need to provide accurate, up-to-date information. Traditional language models often struggle with verifiability and can produce inaccurate responses (hallucinations), which can be particularly harmful in healthcare settings. By integrating retrieval methods directly into the generation process, our system grounds the answers in authoritative sources, enhancing both accuracy and trustworthiness.
+
+### Key Components and Methodology
+
+1. **Database Systems:** We evaluated several database systems, including MongoDB, Elasticsearch, and FAISS, to identify the best fit for our requirements. Elasticsearch provided efficient full-text search, while FAISS excelled at semantic vector searches, balancing speed and accuracy.
+
+2. **Retrieval Methods:** To improve the relevance of the retrieved information, we compared multiple retrieval methods, such as BM25, BioBERT, and MedCPT. Our hybrid method, combining BM25 and MedCPT, showed the highest recall and precision, making it ideal for comprehensive biomedical information retrieval.
+
+3. **System Architecture:** The architecture comprises Docker containers for managing Elasticsearch and FAISS, ensuring scalability and real-time processing. This structure supports efficient query handling and response generation, all while maintaining data integrity and high availability.
+
+### Challenges and Future Directions
+
+While our system shows promise, there are areas for improvement. For instance, we only used a 10% subset of PubMed due to computational constraints, limiting the generalizability of our findings. Future work will involve scaling the system for larger datasets, incorporating patient-specific information for more personalized responses, and exploring open-source language models to enhance reproducibility.
+
+In conclusion, this project offers a scalable approach to biomedical question-answering. Collaborating with Linus brought diverse insights into the development process, allowing us to address both technical and methodological challenges effectively. We look forward to future work that builds upon these findings, making biomedical RAG systems more accessible and reliable for researchers and healthcare professionals alike.
+
+This project description was generated with the assistance of an AI language model.
