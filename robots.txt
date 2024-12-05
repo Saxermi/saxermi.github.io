@@ -1,4 +1,6 @@
 User-agent: *
 Disallow: /tag_backup_readfirst/
 Allow: /
-Sitemap: https://saxermi.github.io/sitemap.xml
+
+
+Sitemap: https://saxermi.github.io/sitemap-index.xml
