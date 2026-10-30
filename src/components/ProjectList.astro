@@ -1,0 +1,35 @@
+---
+import Arrow from './Arrow.astro';
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  projects: CollectionEntry<'project'>[];
+}
+const { projects } = Astro.props;
+---
+
+<div class="project-list">
+  {
+    projects.map((project, i) => (
+      <a class="project-row" href={`/projects/${project.slug}/`}>
+        <span class="row-number" aria-hidden="true">
+          {String(i + 1).padStart(2, '0')}
+        </span>
+        <div>
+          <>
+            <div class="eyebrow">{project.data.category}</div>
+            <h3>{project.data.title}</h3>
+            <p>{project.data.description}</p>
+            <div class="tags">
+              {project.data.methods.slice(0, 4).map((tag) => (
+                <span>{tag}</span>
+              ))}
+            </div>
+          </>
+        </div>
+        <span class="row-arrow" aria-hidden="true">
+          <Arrow />
+        </span>
+      </a>
+    ))
+  }
+</div>

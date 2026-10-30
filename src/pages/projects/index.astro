@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectList from '../../components/ProjectList.astro';
+import { getCollection } from 'astro:content';
+const projects = (await getCollection('project')).sort(
+  (a, b) => (b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0),
+);
+---
+
+<BaseLayout
+  title="Projects"
+  description="Research and technical projects in scientific computing, machine learning, biomedical retrieval and speech processing."
+  ><header class="page-heading">
+    <p class="eyebrow blue">Research & practice</p><h1>Projects</h1><p>
+      Work in scientific computing and machine learning, from reconstructing
+      particle collisions to understanding speech representations.
+    </p>
+  </header><div class="page-content">
+    <ProjectList projects={projects} />
+  </div></BaseLayout
+>

@@ -1,0 +1,59 @@
+---
+import Arrow from '../../components/Arrow.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export async function getStaticPaths() {
+  return (await getCollection('project')).map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+interface Props {
+  project: CollectionEntry<'project'>;
+}
+const { project } = Astro.props;
+const { Content } = await project.render();
+const { data } = project;
+---
+
+<BaseLayout title={data.title} description={data.description}
+  ><header class="page-heading article-title">
+    <a class="eyebrow blue" href="/projects/">← All projects</a><h1>
+      {data.title}
+    </h1><p>{data.description}</p>
+  </header><div class="reading-layout">
+    <aside class="article-meta">
+      <p>{data.category}</p>{
+        (data.period || data.pubDate) && (
+          <p>
+            {data.period ??
+              `Published ${data.pubDate?.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}`}
+          </p>
+        )
+      }<div class="tags">
+        {data.methods.map((tag) => <span>{tag}</span>)}
+      </div><div class="actions" style="margin-top:24px">
+        {
+          data.repository && (
+            <a class="text-link" href={data.repository}>
+              Repository <Arrow />
+            </a>
+          )
+        }{
+          data.document && (
+            <a class="text-link" href={data.document}>
+              Read the report <Arrow />
+            </a>
+          )
+        }{
+          data.publication && (
+            <a class="text-link" href={data.publication}>
+              Related publication <Arrow />
+            </a>
+          )
+        }
+      </div>
+    </aside><article class="prose"><Content /></article>
+  </div></BaseLayout
+>

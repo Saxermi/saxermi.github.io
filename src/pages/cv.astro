@@ -1,202 +1,175 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import TimeLineElement from "../components/cv/TimeLine.astro";
+import Arrow from '../components/Arrow.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  profile,
+  education,
+  experience,
+  activities,
+  skills,
+  presentations,
+} from '../data/profile';
+import Publications from '../components/Publications.astro';
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
-  </div>
-
-  <div class="mb-10 text-justify">
-  I am a young Swiss student with a keen interest in mathematics, computer science as well as natural science. I already had the chance to work on software and electronics projects at Siemens but I'm eager to gain more in depth knowledge and experiences. Im a fast and motivated learner and ready for the next challenge! 
-  </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education</div>
-  </div>
-
-  <div class="time-line-container grid gap-4 mb-10">
-      <TimeLineElement
-      title="BSc. Data Science"
-      subtitle="2022 to 2025 at Zurich University of applied sciences (ZHAW), Winterthur, Switzerland"
+<BaseLayout
+  title="Curriculum vitae"
+  description="Education, research, teaching, technical experience and public activities of Michael Alexander Saxer."
+  ><header class="page-heading">
+    <p class="eyebrow blue">Curriculum vitae</p><h1>
+      Michael Alexander Saxer
+    </h1><p>B.Sc. Data Science · Electronics Engineer (VET)</p><div
+      class="actions"
+    >
+      <a class="button" href="/cv/michael-saxer-cv.pdf" download
+        >Download CV (PDF) ↓</a
       >
-        More information about the curriculum can be found <a href="https://www.zhaw.ch/de/engineering/studium/bachelorstudium/data-science/curriculum-lehrplan/">here</a>.
-        Im currently working on my project thesis working on software for the CMS experiment at CERN. Read more <a href="https://saxermi.github.io/project/project3/">here</a>
-
-    </TimeLineElement>
- 
-    <TimeLineElement
-      title="Vocational Baccalaureate, Engineering, Architecture, Life Sciences"
-      subtitle="2021 to 2022 at Berufsmaturitätsschule Zürich, Zürich, Switzerland"
-    />
-    <TimeLineElement
-      title="Electronics Engineer (VET)"
-      subtitle="2017 to 2021 at Technische Berufsschule Zürich, Zürich, Switzerland"
-      >
-          More information about the curriculum can be found <a href="https://www.swissmem-berufsbildung.ch/fileadmin/user_upload/Swissmem_Berufsbildung/Ausbildungsdokumente_und_Regelwerke/ET/Ausbildungsbestimmungen/D/ET_KoRe.pdf">here</a>
-
-    </TimeLineElement>
-    
-    
-  </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
-  </div>
-
-  <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="Teaching Assistant"
-      subtitle="From September 2023 till June 2024 at ZHAW - School of Engineering, Winterthur, Switzerland"
-    >
-      Supervising the Math tutoring lesson. Helping students with calculus 1/2 and linear algebra 1/2 homework. Also advising them regarding learning techniques and programming questions.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Teaching Assistant"
-      subtitle="From August 2023 to September 2023 at ZHAW - School of Engineering, Winterthur, Switzerland"
-    >
-      ZHAW Pre-College Mathematics course:
-Mathematics of the Swiss technical vocational
-baccalaureate
-    </TimeLineElement>
-    <TimeLineElement
-      title="Electronics Engineer VET Apprentice - Siemens Switzerland AG"
-      subtitle="2017 to 2021 at Siemens Schweiz AG, Zürich, Switzerland"
-    >
-    I designed circuits, programmed SOC's and also desktop applications. I've also gained Experience in various communication protocolls with a focus on MODBUS and M-Bus.
-    During my time at Siemens i used C,C++, C# and from time to time VHDL and python.
-    </TimeLineElement>
-  </div>
-    <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Politics</div>
-  </div>
-
-  <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="Vice President"
-      subtitle="From 2022 till now at  FDP Kreis 9, Zürich, Switzerland"
-    >
-    Additional borad duties,support of the party President, Represent the party.
-<a href="https://www.fdp-zh9.ch/personen/vorstand/vorstand-detail/members/user/michael-saxer">Visit Michael Saxer's Profile</a>
-  </TimeLineElement>
-      <TimeLineElement
-      title="Candidate for cantonal council"
-      subtitle="2022 Zurich , Switzerland"
-    >
-
-I ran with the goal of improving public education and giving more power over the curriculum to the students.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Candidate for local council"
-      subtitle="2022 Zurich , Switzerland"
-    >
-I ran with the goal of improving the housing situation in Zurich.
-
-    </TimeLineElement>
-    <TimeLineElement
-      title="Member of the Board"
-      subtitle="2020 till now at FDP Kreis 9, Zürich, Switzerland"
-    >
-    Responsible for the website and communication ressort
-    </TimeLineElement>
-  </div>
-    <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Volunteer Work</div>
-  </div>
-
-  <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="Student representative"
-      subtitle="From September 2022 till now at ZHAW - School of Engineering, Winterthur, Switzerland"
-    >
-    I represent the class of 2025 at the university.
-    </TimeLineElement>
- 
-    <TimeLineElement
-      title="Scout leader- YMCA"
-      subtitle="From 2016 till now, Cevi ALtstetten und Albisrieden, Zürich, Switzerland"
-    >
-    I spend (almost) every saturday outside doing stuff like climbing, hiking or simply making a fire. I held leading roles in events ranging in size from 5 to 1500 people.
-
-
-
-
-    </TimeLineElement>
-  </div>
-
-<div class="mb-5">
-    <div class="text-3xl w-full font-bold">Awards</div>
-  </div>
-
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-    I have been awared a fellowship of the swiss study foundation. More info 
-      <a href="https://www.studyfoundation.ch/educational-program/" target="_blank"> here</a>
-    </li>
-
-  </ul>
-
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
-  </div>
-
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="https://www.jugendundsport.ch/de/sportarten/lagersport-trekking-uebersicht.html" target="_blank"> J+S Leiter</a>
-    </li>
-
-  </ul>
-
-
-
-
-
-
-
-    <div class="mb-5">
-    <div class="text-3xl w-full font-bold">I am part of the following associations</div>
-  </div>
-
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="https://fdp-zh9.ch" target="_blank">FDP</a>
-    </li>
-    <li>
-      <a href="https://cevi-altstetten.ch/">Cevi Altstetten</a>
-    </li>
-    <li>
-      <a href="https://alias-zhaw.ch/"> Student association</a>
-    </li>
-    <li>
-      <a href="" > i hope i did not forget one</a>
-    </li>
-
-  </ul>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
-  </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Linux</li>
-    <li>Latex</li>
-    <li>R</li>
-    <li>Python</li>
-    <li>C/C++/C#</li>
-    <li>Scrum</li>
-    <li>Leadership</li>
-    <li>Tutoring</li>
-    <li>Git/Github</li>
-    <li>Electronic circuits</li>
-    <li>Event planning</li>
-    <li>Modbus</li>
-    <li>M-Bus</li>
-    <li>Data analysis</li>
-    <li>Statistical tests and regression modeling</li>
-    <li>Machine learning</li>
-    <li>Deep learning basics</li>
-    <li>NLP Basics</li>
-  </ul>
-</BaseLayout>
+    </div>
+  </header><div class="page-content">
+    <section class="split-section">
+      <h2>Education</h2><div>
+        {
+          education.map((e) => (
+            <article class="entry">
+              <p class="eyebrow">{e.period}</p>
+              <h3>{e.url ? <a href={e.url}>{e.title}</a> : e.title}</h3>
+              <p class="organisation">{e.organisation}</p>
+              {'status' in e && <p class="blue">{e.status}</p>}
+              <p class="muted">{e.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+    <section class="split-section">
+      <h2>Research experience</h2><div>
+        <article class="entry">
+          <p class="eyebrow">{experience[0].period}</p><h3>
+            {experience[0].title}
+          </h3><p class="organisation">{experience[0].organisation}</p><p
+            class="muted"
+          >
+            {experience[0].description}
+          </p><ul>
+            <li>
+              Identified block-border effects as the main reconstruction-quality
+              limitation of Deterministic Annealing in Blocks under high-pileup
+              conditions.
+            </li><li>
+              Developed CascadeDA, combining block-wise pre-clustering with
+              global deterministic annealing.
+            </li><li>
+              Achieved 60% faster clustering in the evaluated CMS tracking
+              datasets, with sub-10 µm z-resolution and 99% track-to-vertex
+              assignment efficiency.
+            </li>
+          </ul><a class="text-link" href="/projects/cms-vertex-reconstruction/"
+            >Project & thesis <Arrow /></a
+          >
+        </article>
+      </div>
+    </section>
+    <section class="split-section">
+      <h2>Teaching & work</h2><div>
+        {
+          experience.slice(1).map((e) => (
+            <article class="entry">
+              <>
+                <p class="eyebrow">{e.period}</p>
+                <h3>{e.title}</h3>
+                <p class="organisation">{e.organisation}</p>
+                <p class="muted">{e.description}</p>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+    <section class="split-section">
+      <h2>Publication</h2><Publications />
+    </section>
+    <section class="split-section">
+      <h2>Presentations</h2><div>
+        {
+          presentations.map((p) => (
+            <article class="entry">
+              <>
+                <p class="eyebrow">{p.date}</p>
+                <h3>
+                  <a href={p.url}>{p.title}</a>
+                </h3>
+                <p class="muted">{p.venue}</p>
+                <p class="muted">Indico access requires a CERN account.</p>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+    <section class="split-section">
+      <h2>Selected projects</h2><div>
+        <article class="entry">
+          <h3>
+            <a href="/projects/charged-particle-modeling/"
+              >Modeling Charged Particle Motion in Magnetic Fields with FEM and
+              PINNs</a
+            >
+          </h3><p class="muted">
+            FEM in NGSolve, fourth-order Runge–Kutta trajectories in Python and
+            a PyTorch PINN for the Lorentz force equation. Grade: 6/6.
+          </p>
+        </article><article class="entry">
+          <h3>
+            <a href="/projects/speech-encoders/"
+              >Layer-wise Analysis of Transformer Models for Speaker
+              Identification</a
+            >
+          </h3><p class="muted">
+            Wav2Vec 2.0, XLS-R and Whisper; layer-wise analysis with SVCCA,
+            k-means and t-SNE. Grade: 6/6.
+          </p>
+        </article>
+      </div>
+    </section>
+    <section class="split-section">
+      <h2>Awards & activities</h2><div>
+        {
+          activities.map((a) => (
+            <article class="entry">
+              <>
+                <p class="eyebrow">{a.period}</p>
+                <h3>{a.title}</h3>
+                <p class="muted">{a.description}</p>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+    <section class="split-section">
+      <h2>Skills & languages</h2><dl class="skills">
+        {
+          skills.map(([label, value]) => (
+            <>
+              <>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </>
+            </>
+          ))
+        }
+      </dl>
+    </section>
+    <section class="split-section">
+      <h2>Academic profiles</h2><div class="actions">
+        {
+          profile.links.map((l) => (
+            <a class="text-link" href={l.url}>
+              {l.label} <Arrow />
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </div></BaseLayout
+>

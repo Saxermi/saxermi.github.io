@@ -1,0 +1,73 @@
+---
+import Arrow from '../../components/Arrow.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import 'katex/dist/katex.min.css';
+export async function getStaticPaths() {
+  return (await getCollection('notes', (n) => !n.data.draft)).map((note) => ({
+    params: { slug: note.slug },
+    props: { note },
+  }));
+}
+interface Props {
+  note: CollectionEntry<'notes'>;
+}
+const { note } = Astro.props;
+const { Content } = await note.render();
+---
+
+<BaseLayout
+  title={note.data.title}
+  description={note.data.description}
+  lang={note.data.lang}
+  ><header class="page-heading">
+    <a class="eyebrow blue" href="/notes/">← Study Notes</a><h1>
+      {note.data.title}
+    </h1><p>{note.data.description}</p><div class="tags">
+      {note.data.tags.map((t) => <span>{t}</span>)}
+    </div>{
+      note.data.pubDate && (
+        <p>
+          Published{' '}
+          <time datetime={note.data.pubDate.toISOString()}>
+            {note.data.pubDate.toISOString().slice(0, 10)}
+          </time>
+        </p>
+      )
+    }{
+      note.data.updatedDate && (
+        <p>
+          Updated{' '}
+          <time datetime={note.data.updatedDate.toISOString()}>
+            {note.data.updatedDate.toISOString().slice(0, 10)}
+          </time>
+        </p>
+      )
+    }{
+      note.data.pdf && (
+        <div class="actions">
+          <>
+            <a class="button" href={note.data.pdf}>
+              Open PDF <Arrow />
+            </a>
+            <a class="button" href={note.data.pdf} download>
+              Download PDF ↓
+            </a>
+          </>
+        </div>
+      )
+    }
+  </header><section class="page-content">
+    <article class="prose"><Content /></article>{
+      note.data.pdf && (
+        <iframe
+          class="pdf-viewer"
+          src={note.data.pdf}
+          title={`PDF: ${note.data.title}`}
+          loading="lazy"
+        />
+      )
+    }
+  </section></BaseLayout
+>

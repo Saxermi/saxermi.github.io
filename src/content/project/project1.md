@@ -1,17 +1,19 @@
 ---
-title: "Developing a Biomedical Retrieval-Augmented Generation System"
-description: "Exploring the development of a scalable, reproducible Retrieval-Augmented Generation (RAG) system for biomedical question-answering, in collaboration with Linus Stuhlmann."
-pubDate:  "Oct 15 2024"
-heroImage: "/post_img.webp"
-tags:  ["biomedical", "RAG", "big data", "machine learning"]
+slug: biomedical-rag
+category: Machine learning
+methods: ['Python', 'Elasticsearch', 'FAISS', 'BM25', 'MedCPT']
+title: 'Developing a Biomedical Retrieval-Augmented Generation System'
+description: 'Exploring the development of a scalable, reproducible Retrieval-Augmented Generation (RAG) system for biomedical question-answering, in collaboration with Linus Stuhlmann.'
+publication: 'https://doi.org/10.1109/SDS66131.2025.00029'
+pubDate: 'Oct 15 2024'
+tags: ['biomedical', 'RAG', 'big data', 'machine learning']
 ---
-
 
 In collaboration with Linus Stuhlmann, I recently completed a project to create a Retrieval-Augmented Generation (RAG) system for biomedical question-answering. Our project aimed to tackle the challenges of reproducibility and scalability in this field, addressing how to leverage large datasets, like PubMed, to improve accuracy and efficiency in biomedical information retrieval.
 
 ### Project Overview
 
-Our RAG system is specifically designed for the biomedical domain, integrating advanced retrieval techniques with language models. We used a subset of the PubMed corpus, incorporating tools like Elasticsearch and FAISS to manage and retrieve vast amounts of data efficiently. The system leverages multiple retrieval methods, including BM25 and MedCPT, to optimize performance in terms of recall and precision. 
+Our RAG system is specifically designed for the biomedical domain, integrating advanced retrieval techniques with language models. We used a subset of the PubMed corpus, incorporating tools like Elasticsearch and FAISS to manage and retrieve vast amounts of data efficiently. The system leverages multiple retrieval methods, including BM25 and MedCPT, to optimize performance in terms of recall and precision.
 
 ### Why a RAG System for Biomedical QA?
 

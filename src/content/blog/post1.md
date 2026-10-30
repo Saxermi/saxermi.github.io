@@ -1,14 +1,16 @@
 ---
-title: "Das Bildungssystem neu denken"
-description: "Dieser Blogpost präsentiert Ideen zur flexibleren Gestaltung des Bildungssystems, um es moderner und inklusiver zu machen."
-pubDate: "Nov 23 2023"
-heroImage: "/blog1.png"
-tags: ["Bildung","Politik"] 
+slug: das-bildungssystem-neu-denken
+lang: de
+category: Politics
+title: 'Das Bildungssystem neu denken'
+description: 'Dieser Blogpost präsentiert Ideen zur flexibleren Gestaltung des Bildungssystems, um es moderner und inklusiver zu machen.'
+pubDate: 'Nov 23 2023'
+tags: ['Bildung', 'Politik']
 ---
 
 Hinsweis: Dieser Blogpost wurde Automatisch mit CHATGPT erstellt. Als Grundlage diente ein X-Thread von mir zu diesem Thema aus dem Jahr 2020.
 
- Heute möchte ich eine Vision vorstellen, die nach meiner Überzeugung das Potenzial hat, unsere Sichtweise und Umsetzung von Bildung grundlegend zu verändern. Mein Vorschlag deckt das gesamte Spektrum des Bildungssystems ab, von der Vorschul- bis zur Tertiärstufe.
+Heute möchte ich eine Vision vorstellen, die nach meiner Überzeugung das Potenzial hat, unsere Sichtweise und Umsetzung von Bildung grundlegend zu verändern. Mein Vorschlag deckt das gesamte Spektrum des Bildungssystems ab, von der Vorschul- bis zur Tertiärstufe.
 
 ## Die Grundlage: Vorschul- und Primarstufe
 

@@ -1,0 +1,161 @@
+---
+import Arrow from '../../components/Arrow.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { resources, categories } from '../../data/resources';
+import { getCollection } from 'astro:content';
+const notes = await getCollection('notes', (n) => !n.data.draft);
+---
+
+<BaseLayout
+  title="Study Notes"
+  description="A curated library of mathematics, statistics and machine learning videos, channels and playlists."
+  ><header class="page-heading">
+    <p class="eyebrow blue">Mathematics · Statistics · Computing</p><h1>
+      Study Notes
+    </h1><p>
+      Resources I have collected along the way. A starting point for learning,
+      revisiting a concept or seeing it from a different angle.
+    </p>
+  </header>
+  <section class="page-content" aria-labelledby="library-title">
+    <div class="section-heading">
+      <h2 id="library-title">Curated resources</h2><span class="eyebrow"
+        >Third-party learning material</span
+      >
+    </div>
+    <div class="library-controls" id="library-controls" hidden>
+      <div class="search-group">
+        <label for="resource-search">Search resources</label><input
+          id="resource-search"
+          type="search"
+          placeholder="Try “linear algebra” or “StatQuest”"
+          autocomplete="off"
+          aria-controls="resource-list"
+        />
+      </div><div class="filter-group">
+        <label for="resource-category">Subject</label><select
+          id="resource-category"
+          aria-controls="resource-list"
+          ><option value="">All subjects</option>{
+            categories.map((c) => <option value={c}>{c}</option>)
+          }</select
+        >
+      </div><div class="filter-group">
+        <label for="resource-type">Format</label><select
+          id="resource-type"
+          aria-controls="resource-list"
+          ><option value="">All formats</option>{
+            ['Video', 'Playlist', 'Channel'].map((t) => (
+              <option value={t}>{t}</option>
+            ))
+          }</select
+        >
+      </div>
+    </div>
+    <p
+      class="resource-count"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      id="resource-count"
+    >
+      {resources.length} resources
+    </p><noscript
+      ><p class="muted">
+        All resources are listed below. Enable JavaScript to search and filter.
+      </p></noscript
+    >
+    <div id="resource-list">
+      {
+        resources.map((r) => (
+          <article
+            class="resource"
+            data-resource
+            data-category={r.category}
+            data-type={r.type}
+            data-search={`${r.title} ${r.source} ${r.category} ${r.type}`.toLocaleLowerCase()}
+          >
+            <>
+              <div>
+                <>
+                  <h3>
+                    <a href={r.url}>
+                      {r.title}{' '}
+                      <span aria-hidden="true">
+                        <Arrow />
+                      </span>
+                    </a>
+                  </h3>
+                  <p>
+                    {r.category} <span aria-hidden="true"> / </span> {r.source}
+                  </p>
+                </>
+              </div>
+              <span class="resource-type">{r.type}</span>
+            </>
+          </article>
+        ))
+      }
+    </div><p class="no-results" id="no-results" hidden>
+      No resources match your search. Try another term or choose all subjects.
+    </p>
+    {
+      notes.length > 0 && (
+        <section class="section" style="margin-top:40px">
+          <div class="section-heading">
+            <h2>My summaries</h2>
+          </div>
+          {notes.map((note) => (
+            <article class="resource">
+              <div>
+                <h3>
+                  <a href={`/notes/${note.slug}/`}>{note.data.title}</a>
+                </h3>
+                <p>{note.data.description}</p>
+              </div>
+              <span class="resource-type">
+                {note.data.pdf ? 'PDF + Notes' : 'Notes'}
+              </span>
+            </article>
+          ))}
+        </section>
+      )
+    }
+  </section>
+  <script>
+    const controls = document.getElementById('library-controls');
+    if (controls) controls.hidden = false;
+    const search =
+      document.querySelector<HTMLInputElement>('#resource-search')!;
+    const category =
+      document.querySelector<HTMLSelectElement>('#resource-category')!;
+    const type = document.querySelector<HTMLSelectElement>('#resource-type')!;
+    const rows = [...document.querySelectorAll<HTMLElement>('[data-resource]')];
+    const count = document.getElementById('resource-count')!;
+    const empty = document.getElementById('no-results')!;
+    const normalise = (s: string) =>
+      s
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLocaleLowerCase();
+    function filter() {
+      const terms = normalise(search.value.trim()).split(/\s+/).filter(Boolean);
+      let visible = 0;
+      for (const row of rows) {
+        row.hidden = !(
+          terms.every((term) =>
+            normalise(row.dataset.search ?? '').includes(term),
+          ) &&
+          (!category.value || row.dataset.category === category.value) &&
+          (!type.value || row.dataset.type === type.value)
+        );
+        if (!row.hidden) visible++;
+      }
+      count.textContent = `${visible} of ${rows.length} resources`;
+      empty.hidden = visible > 0;
+    }
+    search.addEventListener('input', filter);
+    category.addEventListener('change', filter);
+    type.addEventListener('change', filter);
+  </script>
+</BaseLayout>

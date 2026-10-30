@@ -1,105 +1,79 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
-
-const projects = (await getCollection("project")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_projects = projects.slice(0, 3);
-
-
-
+import Arrow from '../components/Arrow.astro';
+import { Image } from 'astro:assets';
+import portrait from '../../public/profile.jpg';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectList from '../components/ProjectList.astro';
+import { getCollection } from 'astro:content';
+const projects = await getCollection('project');
+const selected = [
+  'cms-vertex-reconstruction',
+  'biomedical-rag',
+  'speech-encoders',
+].map((slug) => projects.find((p) => p.slug === slug)!);
 ---
 
-<BaseLayout title="Home | Michael Saxer" sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Michael Saxer</div>
-    <div class="text-3xl py-3 font-bold">Aspiring Data Scientist, science enthusiast and Homo Politicus </div>
-    <div class="py-2">
-      <text class="text-lg">
-    Welcome to my own little Internet page. This site is bilingual. While most project descriptions are in English, many blog posts and the Politics part are in German. Please note that this site is currently under construction. Therefore, most of the site is just a placeholder until I have time to update everything.
-      </text>
+<BaseLayout title="Michael Saxer">
+  <section class="hero" aria-labelledby="intro-title">
+    <div>
+      <p class="eyebrow blue">Computational science & data science</p><h1
+        id="intro-title"
+      >
+        Michael<br />Saxer<span class="blue">.</span>
+      </h1><p class="hero-subtitle">
+        Numerical methods, machine learning<br />and the physics behind them.
+      </p><div class="hero-identity">
+        <Image
+          class="hero-portrait"
+          src={portrait}
+          alt="Michael Saxer outdoors"
+          width={160}
+          height={160}
+          format="webp"
+        /><p class="hero-background">
+          B.Sc. Data Science · Electronics Engineer (VET)
+        </p>
+      </div>
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/super_sach" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/saxermi" target="_blank" class="btn btn-outline ml-5">
-        Also check my Github
-      </a>
+    <div class="intro">
+      <p class="intro-lead">
+        I study computational science and engineering at ETH Zürich, with a
+        focus on physics.
+      </p><p>
+        My background is in data science and electronics. For my bachelor thesis
+        at the Paul Scherrer Institute, I worked on primary-vertex
+        reconstruction for the CMS experiment at CERN.
+      </p><p>
+        I'm interested in how numerical methods and machine learning can help us
+        understand physical systems.
+      </p><a class="text-link" href="/about/"
+        >More about me & my CV <span aria-hidden="true"><Arrow /></span></a
+      >
     </div>
-  </div>
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
-<!--
-  <HorizontalCard
-    title="Test Projekt"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
--->
-
-{
-  last_projects.map((project) => (
-    <>
-      <HorizontalCard
-        title={project.data.title}
-        img={project.data.img}
-        desc={project.data.desc}
-        url={"/project/"+project.slug}
-                  target="_self"
-        badge={project.data.badge}
-      />
-      <div class="divider my-0"></div>
-    </>
-  ))
-}
-
-
-
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + post.slug}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
-  <p style="font-size: 10px;">Special thanks to <a href="https://manuelernestog.github.io" target="_blank" class="font-bold">Manuel Ernesto ⚡️</a> for the amazing web template!</p>
-
-  
+  </section>
+  <section class="section" aria-labelledby="work-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Research & technical projects</p><h2 id="work-title">
+          Selected work
+        </h2>
+      </div><a class="text-link" href="/projects/"
+        >All projects <span aria-hidden="true"><Arrow /></span></a
+      >
+    </div><ProjectList projects={selected} />
+  </section>
+  <section class="notes-callout" aria-labelledby="notes-title">
+    <div>
+      <p class="eyebrow">A library for learning</p><h2 id="notes-title">
+        Study Notes & resources
+      </h2>
+    </div><div>
+      <p>
+        A personal collection of useful videos, lectures and playlists in
+        mathematics, statistics and machine learning.
+      </p><a class="text-link" href="/notes/"
+        >Browse the library <span aria-hidden="true"><Arrow /></span></a
+      >
+    </div>
+  </section>
 </BaseLayout>

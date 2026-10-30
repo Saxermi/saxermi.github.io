@@ -1,0 +1,331 @@
+[
+  {
+    "title": "History of Mathematics",
+    "url": "https://youtu.be/2No_CMrxBe8?si=-Do_t8tsU8YyTF3_",
+    "category": "General Mathematics",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Tutorials zu allen möglichen Themen",
+    "url": "https://youtube.com/playlist?list=PLybg94GvOJ9FoGQeUMFZ4SWZsr30jlUYK&si=ZfJUkanQn_qT5b7I",
+    "category": "General Mathematics",
+    "type": "Playlist",
+    "source": "YouTube"
+  },
+  {
+    "title": "Map of Mathematics",
+    "url": "https://youtu.be/OmJ-4B-mS-Y?si=tUiIzlQ3tKEyfA5d",
+    "category": "General Mathematics",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Math Study Habits",
+    "url": "https://youtu.be/3lflvX0BzNo?si=GuBSDKHPWIvtqztF",
+    "category": "General Mathematics",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Math Sorcerer Channel",
+    "url": "https://youtube.com/@TheMathSorcerer?si=LgCIGdKLunZV8-_r",
+    "category": "General Mathematics",
+    "type": "Channel",
+    "source": "YouTube"
+  },
+  {
+    "title": "BriTheMathGuy Channel",
+    "url": "https://youtube.com/@BriTheMathGuy?si=nEBXemRyPbke0T-x",
+    "category": "General Mathematics",
+    "type": "Channel",
+    "source": "YouTube"
+  },
+  {
+    "title": "Anwendung des Skalarprodukts",
+    "url": "https://youtu.be/TBpDMLCC2uY?si=KEdUEZBDUis33Ph9",
+    "category": "Linear Algebra",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Anwendung von Matrizen",
+    "url": "https://youtu.be/rowWM-MijXU?si=cxdfeK6rRc9usjAZ",
+    "category": "Linear Algebra",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Anwendung komplexer Zahlen",
+    "url": "https://youtu.be/8tiQl6T-inE?si=Prv_SmA5LMBFN5N2",
+    "category": "Linear Algebra",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Weitere Anwendung komplexer Zahlen",
+    "url": "https://youtu.be/_h49ilnTmW4?si=pZYP08pcoiOdVSqh",
+    "category": "Linear Algebra",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Anwendung von Eigenvektoren/-werten",
+    "url": "https://youtu.be/i8FukKfMKCI?si=ZeFoD8hUFcw9eBtF",
+    "category": "Linear Algebra",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Wie imaginäre Zahlen erfunden wurden",
+    "url": "https://youtu.be/cUzklzVXJwo?si=b5rGTpW4EvP1XVIL",
+    "category": "Linear Algebra",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Fundamentalsatz der Algebra",
+    "url": "https://youtu.be/shEk8sz1oOw?si=PBpzE5KAxYoccvJw",
+    "category": "Linear Algebra",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Essence of Linear Algebra Playlist",
+    "url": "https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=c1Eg-5R1NZ09thCH",
+    "category": "Linear Algebra",
+    "type": "Playlist",
+    "source": "3Blue1Brown"
+  },
+  {
+    "title": "Mathepeter Lineare Algebra Playlist",
+    "url": "https://youtube.com/playlist?list=PLvBnQVOJXCUGzKDVGLxy-Cn2CmwU0DUtF&si=sx4HPcAJuCf415bQ",
+    "category": "Linear Algebra",
+    "type": "Playlist",
+    "source": "Mathepeter"
+  },
+  {
+    "title": "Gilbert Strang MIT Lineare Algebra Playlist",
+    "url": "https://youtube.com/playlist?list=PL221E2BBF13BECF6C&si=xNEPUUX-_DhrAxtj",
+    "category": "Linear Algebra",
+    "type": "Playlist",
+    "source": "Gilbert Strang"
+  },
+  {
+    "title": "Anwendung von Optimierungsproblemen",
+    "url": "https://youtu.be/6O8Jyrr9LRc?si=3xC-cNZi_u7N1oYn",
+    "category": "Analysis / Calculus",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Anwendung der Taylor-Reihe",
+    "url": "https://youtu.be/eX1hvWxmJVE?si=C4mk30ciyTwFjVSJ",
+    "category": "Analysis / Calculus",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Anwendung von Differentialgleichungen",
+    "url": "https://youtu.be/ifbaAqfqpc4?si=toMCA1wyGKtoivNv",
+    "category": "Analysis / Calculus",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Geschichte der Analysis",
+    "url": "https://youtu.be/5M2RWtD4EzI?si=RRxlcloLH0vT04ED",
+    "category": "Analysis / Calculus",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Gabriels Horn Paradoxon",
+    "url": "https://youtu.be/yZOi9HH5ueU?si=K9ags5XxzhVpUr7F",
+    "category": "Analysis / Calculus",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Essence of Analysis Playlist",
+    "url": "https://youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr&si=xvz6-qJimq6itRwm0",
+    "category": "Analysis / Calculus",
+    "type": "Playlist",
+    "source": "3Blue1Brown"
+  },
+  {
+    "title": "Differentialgleichungen Playlist",
+    "url": "https://youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6&si=8xBkyoN1LdbBugSH",
+    "category": "Analysis / Calculus",
+    "type": "Playlist",
+    "source": "YouTube"
+  },
+  {
+    "title": "Fourier-Transformation",
+    "url": "https://youtu.be/spUNpyF58BY?si=BIJNg31zunAdpQ4r",
+    "category": "Analysis / Calculus",
+    "type": "Video",
+    "source": "YouTube"
+  },
+  {
+    "title": "Mathepeter Analysis Playlist",
+    "url": "https://youtube.com/playlist?list=PLvBnQVOJXCUHVp0u1yepooLueiyAsfvD5&si=4GwaweTPmH5RZvyd",
+    "category": "Analysis / Calculus",
+    "type": "Playlist",
+    "source": "Mathepeter"
+  },
+  {
+    "title": "Calculus Video Playlist",
+    "url": "https://youtube.com/playlist?list=PL0o_zxa4K1BWYThyV4T2Allw6zY0jEumv&si=vOXeAkXX4P98VoMJ",
+    "category": "Analysis / Calculus",
+    "type": "Playlist",
+    "source": "YouTube"
+  },
+  {
+    "title": "Neural Networks - Deep Learning (Statquest)",
+    "url": "https://www.youtube.com/watch?v=zxagGtF9MeU&list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1&pp=iAQB",
+    "category": "Machine Learning",
+    "type": "Playlist",
+    "source": "Statquest"
+  },
+  {
+    "title": "Support Vector Machines (SVM) - Statquest",
+    "url": "https://www.youtube.com/watch?v=efR1C6CvhmE&list=PLblh5JKOoLUL3IJ4-yor0HzkqDQ3JmJkc&pp=iAQB",
+    "category": "Machine Learning",
+    "type": "Playlist",
+    "source": "Statquest"
+  },
+  {
+    "title": "Classification Trees - Statquest",
+    "url": "https://www.youtube.com/watch?v=_L39rN6gz7Y&list=PLblh5JKOoLUKAtDViTvRGFpphEc24M-QH&pp=iAQB",
+    "category": "Machine Learning",
+    "type": "Playlist",
+    "source": "Statquest"
+  },
+  {
+    "title": "Random Forest - Statquest",
+    "url": "https://www.youtube.com/watch?v=J4Wdy0Wc_xQ&list=PLblh5JKOoLUIE96dI3U7oxHaCAbZgfhHk&pp=iAQB",
+    "category": "Machine Learning",
+    "type": "Playlist",
+    "source": "Statquest"
+  },
+  {
+    "title": "Machine Learning Overview - Statquest",
+    "url": "https://www.youtube.com/watch?v=Gv9_4yMHFhI&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&pp=iAQB",
+    "category": "Machine Learning",
+    "type": "Playlist",
+    "source": "Statquest"
+  },
+  {
+    "title": "Neural Networks - Three Blue One Brown",
+    "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&pp=iAQB",
+    "category": "Machine Learning",
+    "type": "Playlist",
+    "source": "3Blue1Brown"
+  },
+  {
+    "title": "The Art of the Problem - Artificial Intelligence",
+    "url": "https://www.youtube.com/watch?v=YulgDAaHBKw&list=PLbg3ZX2pWlgKV8K6bFJr5dhM7oOClExUJ&pp=iAQB",
+    "category": "Machine Learning",
+    "type": "Playlist",
+    "source": "YouTube"
+  },
+  {
+    "title": "StatQuest Channel",
+    "url": "https://www.youtube.com/@statquest/featured",
+    "category": "Statistics",
+    "type": "Channel",
+    "source": "Statquest"
+  },
+  {
+    "title": "Statistics Playlist - Organic Chemistry Tutor",
+    "url": "https://www.youtube.com/watch?v=XZo4xyJXCak&list=PL0o_zxa4K1BVsziIRdfv4Hl4UIqDZhXWV&pp=iAQB",
+    "category": "Statistics",
+    "type": "Playlist",
+    "source": "Organic Chemistry Tutor"
+  },
+  {
+    "title": "Ordinary Differential Equations (ODE) - The Bright Side of Mathematics",
+    "url": "https://www.youtube.com/watch?v=pOD5oKpBP-c&list=PLBh2i93oe2qtAFfLUm_dAVcTf3N9McK0U&pp=iAQB",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "Bright Side of Mathematics"
+  },
+  {
+    "title": "Algebra - The Bright Side of Mathematics",
+    "url": "https://www.youtube.com/watch?v=il1lprob1Fs&list=PLBh2i93oe2qsv5x-tD7GpfS9xFrLVS_b4&pp=iAQB",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "Bright Side of Mathematics"
+  },
+  {
+    "title": "Complex Analysis - The Bright Side of Mathematics",
+    "url": "https://www.youtube.com/watch?v=g6LmapJ6k70&list=PLBh2i93oe2qvnF0fCuYAFDUJJbZ-ybBlI&pp=iAQB",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "Bright Side of Mathematics"
+  },
+  {
+    "title": "Probability Theory - The Bright Side of Mathematics",
+    "url": "https://www.youtube.com/watch?v=tBw_0OKEaDA&list=PLBh2i93oe2qtmWsYpx0NarbeahMJvhRj0&pp=iAQB",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "Bright Side of Mathematics"
+  },
+  {
+    "title": "Functional Analysis - The Bright Side of Mathematics",
+    "url": "https://www.youtube.com/watch?v=yDdxFBcvSGw&list=PLBh2i93oe2qsGKDOsuVVw-OCAfprrnGfr&pp=iAQB",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "Bright Side of Mathematics"
+  },
+  {
+    "title": "Fourier Analysis - The Bright Side of Mathematics",
+    "url": "https://www.youtube.com/watch?v=XrRxFJIkY1U&list=PLBh2i93oe2qvd9kFME0SLmiasKbQ7zZSr&pp=iAQB",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "Bright Side of Mathematics"
+  },
+  {
+    "title": "Hilbert Spaces - The Bright Side of Mathematics",
+    "url": "https://www.youtube.com/watch?v=oCOK7_xUCS8&list=PLBh2i93oe2quWGLJi0CJxUUUPH6B9lbio&pp=iAQB",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "Bright Side of Mathematics"
+  },
+  {
+    "title": "Numerical Analysis - Bright Side of Mathematics",
+    "url": "https://www.youtube.com/watch?v=kT7dqRoRSUU&list=PLu7FZgjILMWGuFwUxJEgeVSODMA6YsGG_",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "Bright Side of Mathematics"
+  },
+  {
+    "title": "Reinforcement Learning - David Silver",
+    "url": "https://www.youtube.com/watch?v=FgzM3zpZ55o&list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "David Silver"
+  },
+  {
+    "title": "Reinforcement Learning - DeepMind",
+    "url": "https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "DeepMind"
+  },
+  {
+    "title": "Various Data Engineering Topics - IBM Technology",
+    "url": "https://www.youtube.com/@IBMTechnology/playlists",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "IBM Technology"
+  },
+  {
+    "title": "Physics Topics",
+    "url": "https://www.youtube.com/watch?v=b1t41Q3xRM8&list=PL0o_zxa4K1BU6wPPLDsoTj1_wEf0LSNeR",
+    "category": "Mixed Topics",
+    "type": "Playlist",
+    "source": "YouTube"
+  }
+]

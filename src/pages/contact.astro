@@ -1,0 +1,19 @@
+---
+import Arrow from '../components/Arrow.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout title="Contact"
+  ><header class="page-heading">
+    <p class="eyebrow blue">Public profiles</p><h1>Profiles</h1>
+  </header><div class="page-content actions">
+    {
+      profile.links.map((l) => (
+        <a class="button" href={l.url}>
+          {l.label} <Arrow />
+        </a>
+      ))
+    }
+  </div></BaseLayout
+>
