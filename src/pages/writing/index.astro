@@ -1,0 +1,54 @@
+---
+import Arrow from '../../components/Arrow.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog', (p) => !p.data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<BaseLayout
+  title="Writing"
+  description="Articles and personal perspectives by Michael Saxer. Writing in English and German, in its original language."
+  ><header class="page-heading">
+    <p class="eyebrow blue">Articles & perspectives</p><h1>Writing</h1><p>
+      Longer thoughts, in their original language. Technical and scientific
+      writing in English; political writing primarily in German.
+    </p>
+  </header><section class="page-content" aria-label="Articles">
+    {
+      posts.map((p) => (
+        <article class="writing-row" lang={p.data.lang}>
+          <>
+            <div>
+              <>
+                <time datetime={p.data.pubDate.toISOString()}>
+                  {p.data.pubDate.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    timeZone: 'UTC',
+                  })}
+                </time>
+                <p class="eyebrow">
+                  {p.data.category} ·{' '}
+                  {p.data.lang === 'de' ? 'Deutsch' : 'English'}
+                </p>
+              </>
+            </div>
+            <div>
+              <>
+                <h2>
+                  <a href={`/writing/${p.slug}/`}>
+                    {p.data.title} <Arrow />
+                  </a>
+                </h2>
+                <p>{p.data.description}</p>
+              </>
+            </div>
+          </>
+        </article>
+      ))
+    }
+  </section></BaseLayout
+>

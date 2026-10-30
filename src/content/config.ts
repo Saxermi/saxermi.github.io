@@ -1,51 +1,62 @@
-import { z, defineCollection } from "astro:content";
-const blogSchema = z.object({
+import { z, defineCollection } from 'astro:content';
+const tags = z.array(z.string()).default([]);
+const links = {
+  repository: z.string().url().optional(),
+  document: z.string().url().optional(),
+  publication: z.string().url().optional(),
+};
+const project = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date().optional(),
+    category: z.string(),
+    period: z.string().optional(),
+    methods: tags,
+    tags,
+    badge: z.string().optional(),
+    ...links,
+  }),
+});
+const blog = defineCollection({
+  type: 'content',
+  schema: z.object({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    updatedDate: z.string().optional(),
-    heroImage: z.string().optional(),
-    badge: z.string().optional(),
-    tags: z.array(z.string()).refine(items => new Set(items).size === items.length, {
-        message: 'tags must be unique',
-    }).optional(),
+    updatedDate: z.coerce.date().optional(),
+    lang: z.enum(['en', 'de']).default('en'),
+    category: z.string().default('Writing'),
+    tags,
+    draft: z.boolean().default(false),
+  }),
 });
-const projectSchema = z.object({
+const notes = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    tags,
+    lang: z.enum(['en', 'de']).default('en'),
+    pubDate: z.coerce.date().optional(),
+    updatedDate: z.coerce.date().optional(),
+    pdf: z
+      .string()
+      .regex(/^\/notes\/.+\.pdf$/)
+      .optional(),
+    draft: z.boolean().default(false),
+  }),
+});
+const politics = defineCollection({
+  type: 'content',
+  schema: z.object({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    updatedDate: z.string().optional(),
-    heroImage: z.string().optional(),
-    badge: z.string().optional(),
-    tags: z.array(z.string()).refine(items => new Set(items).size === items.length, {
-        message: 'tags must be unique',
-    }).optional(),
+    tags,
+    lang: z.enum(['en', 'de']).default('de'),
+    draft: z.boolean().default(false),
+  }),
 });
-const storeSchema = z.object({
-    title: z.string(),
-    description: z.string(),
-    custom_link_label: z.string(),
-    custom_link: z.string().optional(),
-    updatedDate: z.coerce.date(),
-    pricing: z.string().optional(),
-    oldPricing: z.string().optional(),
-    badge: z.string().optional(),
-    checkoutUrl: z.string().optional(),
-    heroImage: z.string().optional(),
-});
-
-export type BlogSchema = z.infer<typeof blogSchema>;
-export type StoreSchema = z.infer<typeof storeSchema>;
-export type projectSchema = z.infer<typeof projectSchema>;
-
-const blogCollection = defineCollection({ schema: blogSchema });
-const storeCollection = defineCollection({ schema: storeSchema });
-const projectCollection = defineCollection({ schema: projectSchema });
-
-
-export const collections = {
-    'blog': blogCollection,
-    'store': storeCollection,
-    'project': projectCollection
-    
-}
+export const collections = { project, blog, notes, politics };

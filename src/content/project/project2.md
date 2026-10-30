@@ -1,9 +1,13 @@
 ---
-title: "Evaluating Transformer Layers in Speech Encoders for Speaker Identification"
-description: "Exploring the effectiveness of Wav2Vec 2.0, XLS-R, and Whisper models in speaker identification tasks, with a focus on layer-wise performance."
-pubDate: "Oct 15 2024"
-heroImage: "/post_img.webp"
-tags: ["speech processing", "transformer", "speaker identification"]
+slug: speech-encoders
+category: Speech processing
+methods: ['Python', 'Wav2Vec 2.0', 'XLS-R', 'Whisper', 'SVCCA']
+title: 'Evaluating Transformer Layers in Speech Encoders for Speaker Identification'
+description: 'Exploring the effectiveness of Wav2Vec 2.0, XLS-R, and Whisper models in speaker identification tasks, with a focus on layer-wise performance.'
+document: 'https://github.com/slinusc/speaker_identification_evaluation/blob/main/Evaluating_the_Effectiveness_of_Transformer_Layers.pdf'
+repository: 'https://github.com/slinusc/speaker_identification_evaluation'
+pubDate: 'Oct 15 2024'
+tags: ['speech processing', 'transformer', 'speaker identification']
 ---
 
 In collaboration with Linus Stuhlmann, I conducted a study evaluating the effectiveness of different transformer layers in three advanced speech encoder models—Wav2Vec 2.0, XLS-R, and Whisper—when applied to speaker identification tasks. Our goal was to understand how layer-wise representations contribute to capturing speaker-specific features and determine optimal configurations for these models.
@@ -20,7 +24,7 @@ Each model's transformer layers extract features differently, influencing their 
 
 1. **Encoder Models:** We evaluated three models: Wav2Vec 2.0, XLS-R, and Whisper. Each model processes audio inputs differently, influencing how they capture speaker-specific information.
 
-2. **Evaluation Techniques:** 
+2. **Evaluation Techniques:**
    - **SVCCA:** We used this technique to measure linear correlations between hidden states and speaker labels, helping us pinpoint layers that best capture speaker features.
    - **Clustering and Dimensionality Reduction:** We applied k-means clustering and t-SNE to visualize and assess the distinctiveness of speaker embeddings at different layers.
    - **Hyperparameter Optimization:** Using Optuna, we determined the optimal number of layers for each model to enhance accuracy and reduce computational resources.
@@ -30,6 +34,7 @@ Each model's transformer layers extract features differently, influencing their 
 ### Results and Insights
 
 Our analysis revealed that:
+
 - Wav2Vec 2.0 and XLS-R capture speaker-specific features effectively in early layers, while Whisper's effectiveness increases in deeper layers.
 - The optimal layer configurations are 7 layers for Wav2Vec 2.0, 3 layers for XLS-R, and 16 layers for Whisper.
 - Fine-tuning improves stability and clustering performance, with distinct improvements in layer-wise performance metrics.

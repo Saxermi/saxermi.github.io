@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+export async function getStaticPaths() {
+  return (await getCollection('politics', (p) => !p.data.draft)).map(
+    (post) => ({ params: { slug: post.slug }, props: { post } }),
+  );
+}
+interface Props {
+  post: CollectionEntry<'politics'>;
+}
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  lang={post.data.lang}
+  ><header class="page-heading">
+    <a class="eyebrow blue" href="/politics/">← Politik</a><h1>
+      {post.data.title}
+    </h1><p>
+      Persönlicher Beitrag · <time datetime={post.data.pubDate.toISOString()}
+        >{post.data.pubDate.toISOString().slice(0, 10)}</time
+      >
+    </p>
+  </header><article class="prose page-content"><Content /></article></BaseLayout
+>

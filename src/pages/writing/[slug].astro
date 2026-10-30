@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import 'katex/dist/katex.min.css';
+export async function getStaticPaths() {
+  return (await getCollection('blog', (p) => !p.data.draft)).map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  lang={post.data.lang}
+  ><header class="page-heading article-title">
+    <a class="eyebrow blue" href="/writing/"
+      >← {post.data.lang === 'de' ? 'Alle Artikel' : 'All writing'}</a
+    ><h1>{post.data.title}</h1><p>{post.data.description}</p>
+  </header><div class="reading-layout">
+    <aside class="article-meta">
+      <p>
+        <time datetime={post.data.pubDate.toISOString()}
+          >{
+            post.data.pubDate.toLocaleDateString(post.data.lang, {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+              timeZone: 'UTC',
+            })
+          }</time
+        >
+      </p><p>{post.data.category}</p>{
+        post.data.updatedDate && (
+          <p>Updated {post.data.updatedDate.toISOString().slice(0, 10)}</p>
+        )
+      }<p>
+        {
+          post.data.lang === 'de'
+            ? 'Persönlicher Meinungsbeitrag'
+            : 'Personal perspective'
+        }
+      </p>
+    </aside><article class="prose"><Content /></article>
+  </div></BaseLayout
+>

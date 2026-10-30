@@ -1,137 +1,97 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import TimeLineElement from "../components/cv/TimeLine.astro";
+import Arrow from '../components/Arrow.astro';
+import publicContact from '../data/public-contact.json';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const posts = await getCollection(
+  'blog',
+  (p) => !p.data.draft && p.data.category === 'Politics',
+);
+const articles = await getCollection('politics', (p) => !p.data.draft);
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Hier werde ich in kürze Kontraverse Positionen äussern</div>
-  </div>
-
-  <div class="mb-10 text-justify">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Politik Thema Nummer 1</div>
-  </div>
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Politik Thema Nummer 2</div>
-  </div>
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    
-      <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Politik Thema Nummer 3</div>
-  </div>
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    
-      <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Politik Thema Nummer 4</div>
-  </div>
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-<!--
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
-  </div>
-
-  <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-  </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
-  </div>
-
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-  </ul>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
-  </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-  </ul>
-  
-  
-  -->
-</BaseLayout>
+<BaseLayout
+  title="Politik"
+  lang="de"
+  description="Politisches Engagement von Michael Saxer in Zürich: Präsidium der FDP Zürich Kreis 9 und persönliche Beiträge."
+  ><header class="page-heading">
+    <p class="eyebrow blue">Engagement in Zürich</p><h1>Politik</h1><p>
+      Mein politisches Engagement und persönliche Gedanken zu gesellschaftlichen
+      Fragen.
+    </p>
+  </header><div class="page-content">
+    <section class="split-section">
+      <h2>Politische Tätigkeit</h2><div>
+        <article class="entry">
+          <p class="eyebrow">Seit 2026</p><h3>
+            Präsident der FDP Zürich Kreis 9
+          </h3><p class="muted">
+            Seit 2022 war ich Vizepräsident der Kreispartei; 2026 habe ich das
+            Präsidium übernommen. Ich kandidierte 2022 und 2026 für den
+            Gemeinderat sowie 2023 für den Kantonsrat. Auf der Gemeinderatsliste
+            stehe ich an erster Stelle zum Nachrücken.
+          </p>
+          <a class="text-link" href={`mailto:${publicContact.partyEmail}`}
+            >Kontakt über die FDP <Arrow /></a
+          >
+          <div class="actions" style="margin-top:16px">
+            <a class="text-link" href="https://fdp-zh9.ch"
+              >FDP Zürich Kreis 9 <Arrow /></a
+            ><a
+              class="text-link"
+              href="https://www.fdp-zh9.ch/personen/vorstand/vorstand-detail/members/user/michael-saxer"
+              >Öffentliches Parteiprofil <Arrow /></a
+            >
+          </div>
+        </article>
+      </div>
+    </section><section class="split-section">
+      <h2>Beiträge & Positionen</h2><div>
+        {
+          posts.map((p) => (
+            <article class="entry">
+              <>
+                <p class="eyebrow">
+                  {p.data.pubDate.toLocaleDateString('de-CH', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    timeZone: 'UTC',
+                  })}{' '}
+                  · Persönliche Meinung
+                </p>
+                <h3>
+                  <a href={`/writing/${p.slug}/`}>
+                    {p.data.title} <Arrow />
+                  </a>
+                </h3>
+                <p class="muted">{p.data.description}</p>
+              </>
+            </article>
+          ))
+        }{
+          articles.map((p) => (
+            <article class="entry">
+              <>
+                <p class="eyebrow">Persönlicher Beitrag</p>
+                <h3>
+                  <a href={`/politics/${p.slug}/`}>
+                    {p.data.title} <Arrow />
+                  </a>
+                </h3>
+                <p class="muted">{p.data.description}</p>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </section><section class="split-section">
+      <h2>Politisches Projekt</h2><div class="note-box">
+        <h3>Weitere Informationen folgen</h3><p>
+          Hier ist Platz für künftige Projekte und Informationen zu
+          organisatorischen Aktivitäten.
+        </p>
+      </div>
+    </section>
+  </div></BaseLayout
+>

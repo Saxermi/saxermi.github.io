@@ -1,0 +1,8 @@
+---
+import Redirect from '../../../../components/Redirect.astro';
+export function getStaticPaths() {
+  return ['Bildung', 'Politik'].map((tag) => ({ params: { tag } }));
+}
+---
+
+<Redirect to="/writing/" />
